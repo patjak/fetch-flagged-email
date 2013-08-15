@@ -66,6 +66,7 @@ def searchmail(imap_server, search, output, resetflag):
   messages_contents = imap_server.fetch(messages, ['RFC822'])
   for message_id, data in messages_contents.iteritems():
     message_string = data['RFC822']
+    message_string = message_string.replace('\r\n', '\n'); # Convert to unix newlines
     message = email.message_from_string(message_string)
     filename =  "{0:04}.mail".format(data['SEQ'])
     outfile = os.path.join(output,filename)
