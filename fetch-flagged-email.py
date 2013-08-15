@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 #
 # Copyright (C) 2012 Gedare Bloom
 # 
